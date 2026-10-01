@@ -1,0 +1,26 @@
+MAGIFI.COM SETUP
+================
+
+You need:
+1. A domain such as magifi.com registered with a domain registrar.
+2. A static web host capable of serving HTML, WASM and PCK files over HTTPS.
+
+Recommended deployment model:
+    magifi.com
+       |
+       v
+    static host
+       |
+       +-- index.html
+       +-- game/
+           +-- MAGIFI.html
+           +-- MAGIFI.wasm
+           +-- MAGIFI.pck
+           +-- ...
+
+Point the domain's DNS records at the static host according to that
+host's instructions. Enable HTTPS.
+
+The game should be served over HTTPS. Godot's Web export supports
+Progressive Web App / cross-origin isolation configuration, which is
+important for browser features used by modern Web builds.

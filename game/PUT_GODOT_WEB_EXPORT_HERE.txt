@@ -1,0 +1,1 @@
+Run BUILD_WEB.ps1 or export the 'MAGIFI Web' preset, then place the generated Web export files in this folder.

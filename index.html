@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MAGIFI</title>
+<meta name="theme-color" content="#05010a">
+<style>
+html,body{margin:0;width:100%;height:100%;background:#05010a;overflow:hidden}
+body{display:flex;align-items:center;justify-content:center;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:#ff62d8}
+#boot{position:fixed;inset:0;display:grid;place-items:center;background:#05010a;z-index:10}
+.panel{border:1px solid #8f3ca0;padding:28px 34px;text-align:center;box-shadow:0 0 40px #5d176b55}
+.logo{font-size:28px;letter-spacing:.35em;margin-bottom:12px}
+.sub{font-size:12px;color:#b99bbd;letter-spacing:.16em}
+.bar{width:260px;height:3px;background:#241027;margin:22px auto 0;overflow:hidden}
+.bar i{display:block;height:100%;width:45%;background:#ff62d8;animation:load 1.2s infinite ease-in-out}
+@keyframes load{0%{transform:translateX(-120%)}100%{transform:translateX(580%)}}
+iframe{border:0;width:100vw;height:100vh;display:none}
+</style>
+</head>
+<body>
+<div id="boot">
+  <div class="panel">
+    <div class="logo">M A G I F I</div>
+    <div class="sub">SANCT // WEB NODE INITIALISING</div>
+    <div class="bar"><i></i></div>
+  </div>
+</div>
+<iframe id="game" title="MAGIFI"></iframe>
+<script>
+/*
+  After exporting MAGIFI for Web, put the generated Godot HTML export
+  inside /game/ and change GAME_URL if your exported HTML has a different name.
+*/
+const GAME_URL = "/game/MAGIFI.html";
+const frame = document.getElementById("game");
+setTimeout(() => {
+  frame.src = GAME_URL;
+  frame.style.display = "block";
+  document.getElementById("boot").remove();
+}, 700);
+</script>
+</body>
+</html>
